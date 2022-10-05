@@ -19,10 +19,14 @@ setInterval(() => {
         free: `${freeMem} GB`,
         percent: `${percent} %`
     }
+    let dateTime = new Date().toLocaleString()
+    let print = `${dateTime} ${JSON.stringify(memoria)}\n`
+
     console.clear()
     console.table(memoria)
-    fs.appendFile('../aula02/log.txt',
-        'Inserindo log...',
+    fs.appendFile('./aula02/log.txt',
+        // 'Inserindo log...',
+        print,
         'utf-8',
         () => console.log('log inserido'))
 }, 1000)
