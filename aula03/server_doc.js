@@ -1,7 +1,7 @@
 
 const http = require('http');
 
-const hostname = 'localhostne';
+const hostname = 'localhost';
 const port = 3000;
 
 //construcao do SERVER
@@ -9,8 +9,8 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   
-  //Content-Type é padrao
-  res.setHeader('content-type', 'text/plain', 'charset=utf-8')
+  //Content-type é padrao. charset=utf-8 vem precedido de ; (para caracteres especiais)
+  res.setHeader('Content-type', 'text/plain; charset=utf-8')
   res.end('Hello, George!\n');
 });
 
